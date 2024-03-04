@@ -1,0 +1,15 @@
+{
+    "name": "custom-widget",
+    "version": "1.0.0",
+    "description": "A project for creating custom widgets, including HTML to image conversion.",
+    "main": "index.js",
+    "scripts": {
+      "start": "node yourEntryPoint.js"
+    },
+    "dependencies": {
+      "node-html-to-image": "^2.1.0"
+    },
+    "author": "Hobeom",
+    "license": "ISC"
+  }
+  
