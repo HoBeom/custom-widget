@@ -30,6 +30,7 @@ async function screenshotHTML(dir) {
                 return { x: left, y: top, width, height };
               });
             await page.screenshot({path: outputPath, clip});
+            console.log('Save png image to:', outputPath);
         }
     }
 
