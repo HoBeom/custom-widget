@@ -37,7 +37,7 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Automatically update images"
-        files: */widget.png
+        files: "*/widget.png"
         rebase: 'true'
         name: ${{ env.GITHUB_USER_NAME }}
         email: ${{ env.GITHUB_USER_EMAIL }}
