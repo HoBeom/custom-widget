@@ -1,0 +1,38 @@
+name: HTML to Image
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Runs at minute 0 past every 12th hour.
+    - cron: '0 */12 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Convert HTML to Image
+      run: node update-pngs.js
+
+    - name: Commit and Push Images
+      uses: github-actions-x/commit@v2.9
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Automatically update images"
+        files: stackoverflow/widget.png
+        rebase: 'true'
+        name: ${{ env.GITHUB_USER_NAME }}
+        email: ${{ env.GITHUB_USER_EMAIL }}
