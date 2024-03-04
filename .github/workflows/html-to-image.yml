@@ -8,6 +8,10 @@ on:
     # Runs at minute 0 past every 12th hour.
     - cron: '0 */12 * * *'
 
+env:
+  GITHUB_USER_NAME: HoBeom
+  GITHUB_USER_EMAIL: jhb1365@gmail.com
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,7 +23,7 @@ jobs:
         sudo apt-get install -y libxshmfence1 libgbm1 libxrandr2 libasound2 libpangocairo-1.0-0 libatk1.0-0 libatk-bridge2.0-0 libx11-xcb1 libxcb-dri3-0 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libcups2 libxss1 libxkbcommon0 libwayland-client0 libwayland-server0 libgtk-3-0
     
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       
     - name: Set up Node.js
       uses: actions/setup-node@v3
@@ -37,8 +41,7 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Automatically update images"
-        files: "**/widget.png"
+        files: "*/widget.png"
         rebase: 'true'
-        force: true
         name: ${{ env.GITHUB_USER_NAME }}
         email: ${{ env.GITHUB_USER_EMAIL }}
