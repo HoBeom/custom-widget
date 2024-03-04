@@ -1,0 +1,22 @@
+<a href="https://stackoverflow.com/users/11791110" target="_blank" style="text-decoration: none;">
+    <div style="padding: 10px; background-color: #FFA500; color: white; border-radius: 5px; display: inline-block;">
+        <span>StackOverflow Reputation: <span id="user-reputation">Loading...</span></span>
+    </div>
+</a>
+
+<script>
+    function fetchUserReputation() {
+        const userId = '11791110'; // Replace with the desired StackOverflow user ID
+        const url = `https://api.stackexchange.com/2.2/users/${userId}?site=stackoverflow`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const reputation = data.items[0].reputation;
+                document.getElementById('user-reputation').textContent = reputation;
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    fetchUserReputation();
+</script>
