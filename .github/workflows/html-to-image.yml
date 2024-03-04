@@ -33,11 +33,12 @@ jobs:
       run: node update-pngs.js
 
     - name: Commit and Push Images
-      uses: github-actions-x/commit@v2.9
+      uses: github-actions-x/commit@v6
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "Automatically update images"
         files: "**/widget.png"
         rebase: 'true'
+        force: true
         name: ${{ env.GITHUB_USER_NAME }}
         email: ${{ env.GITHUB_USER_EMAIL }}
