@@ -1,13 +1,13 @@
 {
-    "name": "custom-widget",
+    "name": "html-to-image-converter",
     "version": "1.0.0",
-    "description": "A project for creating custom widgets, including HTML to image conversion.",
+    "description": "A tool to convert HTML pages to images using Puppeteer",
     "main": "index.js",
     "scripts": {
-      "start": "node yourEntryPoint.js"
+      "start": "node index.js"
     },
     "dependencies": {
-      "node-html-to-image": "^2.1.0"
+      "puppeteer": "^15.0.0"
     },
     "author": "Hobeom",
     "license": "ISC"
