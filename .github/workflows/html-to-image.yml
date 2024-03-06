@@ -5,8 +5,8 @@ on:
     branches:
       - main
   schedule:
-    # Runs at minute 0 past every 12th hour.
-    - cron: '0 */12 * * *'
+    # Runs on Monday every week.
+    - cron: 0 0 * * 1
 
 env:
   GITHUB_USER_NAME: HoBeom
