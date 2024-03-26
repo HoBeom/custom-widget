@@ -9,4 +9,4 @@
     <a href="https://hobeom.github.io/custom-widget/crossref/">
     <img src="crossref/widget.png">
     </a>
-    > doi param example: [https://hobeom.github.io/custom-widget/crossref/?doi=10.1109/ITC-CSCC52171.2021.9501458](https://hobeom.github.io/custom-widget/crossref/?doi=10.1109/ITC-CSCC52171.2021.9501458)
+    > doi param example: [https://hobeom.github.io/custom-widget/crossref/doi.html?doi=10.1109/ITC-CSCC52171.2021.9501458](https://hobeom.github.io/custom-widget/crossref/doi.html?doi=10.1109/ITC-CSCC52171.2021.9501458)
