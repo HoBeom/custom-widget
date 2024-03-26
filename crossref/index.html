@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Citation Badge for DOI 10.1109/ITC-CSCC52171.2021.9501458</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    #citation-widget {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+        background-color: #d8d2c4; 
+        color: #4f5858;
+        padding: 10px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+    #citation-widget:hover {
+        background-color: #ffc72c /* #ef3340, #3eb1c8, #ffc72c */
+    }
+    #citation-widget svg {
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    #citation-count {
+        font-weight: 700;
+    }
+</style>
+</head>
+<body>
+    
+<a href="https://doi.org/10.1109/ITC-CSCC52171.2021.9501458" target="_blank" style="text-decoration: none;">
+    <div id="citation-widget" style="position: relative;">
+        <img src="https://em-content.zobj.net/source/telegram/386/books_1f4da.webp" width="28" height="28" alt="Book Icon" style="position: absolute; top: 4px; left: 4px;">
+        <span style="margin-left: 24px;">Citations: <span id="citation-count">Loading...</span></span>
+    </div>
+</a>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const doi = "10.1109/ITC-CSCC52171.2021.9501458";
+    const url = `https://api.crossref.org/works/${doi}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const citationCount = data.message['is-referenced-by-count'];
+            document.getElementById('citation-count').textContent = citationCount;
+        })
+        .catch(error => {
+            console.error('Error fetching citation data:', error);
+            document.getElementById('citation-count').textContent = 'Unavailable';
+        });
+});
+</script>
+
+</body>
+</html>
