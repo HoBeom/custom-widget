@@ -5,9 +5,16 @@
 <title>Citation Badge for DOI 10.1109/ITC-CSCC52171.2021.9501458</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-    body {
+    html, body {
         margin: 0;
     }
+    iframe {
+        display: block; /* iframes are inline by default */
+        background: #00000000;
+        border: none; /* Reset default border */
+        height: 100vh; /* Viewport-relative units */
+        width: 100vw;
+    } /* https://stackoverflow.com/questions/819416/adjust-width-and-height-of-iframe-to-fit-with-content-in-it */
     #widget {
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
